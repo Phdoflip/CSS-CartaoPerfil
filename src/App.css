@@ -1,42 +1,91 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Reset e estilo base */
+body {
+  font-family: "Orbitron", "Segoe UI", sans-serif; /* Fonte futurista */
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  background-size: 300% 300%;
+  animation: gradientMove 10s ease infinite;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Animação do gradiente */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
+/* Cartão */
 .card {
-  padding: 2em;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  max-width: 340px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.read-the-docs {
-  color: #888;
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+}
+
+/* Imagem de perfil */
+.profile-img {
+  border-radius: 50%;
+  border: 3px solid cyan;
+  margin-bottom: 16px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+}
+
+/* Nome */
+.card h2 {
+  font-size: 1.5rem;
+  color: #00ffff;
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.7);
+  margin-bottom: 8px;
+}
+
+/* Descrição */
+.card p {
+  font-size: 0.95rem;
+  color: #b0faff;
+  margin-bottom: 20px;
+}
+
+/* Botão futurista neon */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: transparent;
+  color: #00ffff;
+  border: 2px solid #00ffff;
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  box-shadow: 0 0 10px rgba(0,255,255,0.5), inset 0 0 10px rgba(0,255,255,0.3);
+  transition: all 0.3s ease;
+}
+
+.btn::before {
+  content: "✦";
+  font-size: 1.2rem;
+}
+
+.btn:hover {
+  background: #00ffff;
+  color: #0f2027;
+  box-shadow: 0 0 20px #00ffff, inset 0 0 15px rgba(255,255,255,0.3);
+  transform: scale(1.08);
 }
